@@ -1,3 +1,11 @@
+
+---
+
+## 3. `.github/workflows/python-package.yml` – GitHub Actions CI
+
+Bu dosyayı `.github/workflows/` klasörüne kaydedin. (Kullanıcının verdiği içeriği aynen kullandım, sadece küçük bir düzeltme: `pip install flake8 pytest` satırından sonra `if [ -f requirements.txt ]; then pip install -r requirements.txt; fi` eklenmiş.)
+
+```yaml
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
