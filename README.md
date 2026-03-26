@@ -1,84 +1,91 @@
-# Secure Data Eraser – Community Edition
+# 🔒 Secure Data Eraser – Community Edition
 
-**Güvenli veri imha aracı** – Dosyaları veya depolama aygıtlarını (USB, HDD, SSD) kurtarılamaz şekilde siler.  
-DoD 5220.22-M (3 ve 7 geçiş), sıfırlama ve rastgele veri yazma yöntemlerini destekler.
+> **“Askeri sınıf veri imhanın açık kaynak önizlemesi”**  
+> *Bu proje, gerçek askeri standartlara sahip ticari ürünümüzün demo sürümüdür. Kaynak kodu herkese açıktır, ancak en gelişmiş özellikler ve sertifikalar yalnızca kurumsal lisans ile sunulmaktadır.*
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-
----
-
-## 📌 Özellikler
-
-- **Dosya silme** (`--file`) veya **blok aygıt silme** (`--device`) desteği  
-- **Silme yöntemleri**:
-  - `zero` – sadece sıfır yazma  
-  - `random` – rastgele veri yazma  
-  - `dod3` – DoD 5220.22-M 3 geçiş (0x00, 0xFF, rastgele)  
-  - `dod7` – DoD 5220.22-M 7 geçiş (ECE standardı)  
-- **Doğrulama** seçeneği (`--verify`) – yazılan her bayt okunup kontrol edilir  
-- İlerleme göstergesi ve geçiş süresi raporu  
-- Root yetkisi gerektiğinde uyarı (aygıt silme)  
-- Açık kaynak (GPLv3)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.6%2B-blue?style=for-the-badge&logo=python" />
+  <img src="https://img.shields.io/badge/License-GPLv3-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20WSL-lightgrey?style=for-the-badge" />
+  <a href="https://www.virustotal.com/gui/file-analysis/ZWQyODkzZjliZjFjZmE3NTk3N2IwZGQ1OTAzYTEyYzY6MTc3NDU0OTM2MA==">
+    <img src="https://img.shields.io/badge/VirusTotal-0%2F60%20(Build%20Temiz)-brightgreen?style=for-the-badge&logo=virustotal" />
+  </a>
+</p>
 
 ---
 
-## 🚀 Gereksinimler
+## 🎯 Proje Hakkında
 
-- Python 3.6 veya üzeri  
-- Linux / macOS / WSL (Windows için WSL önerilir)  
-- Aygıt silme işlemleri için **root** yetkisi (`sudo`)
+**Secure Data Eraser – Community Edition**, dosyaları ve depolama aygıtlarını kurtarılamaz şekilde silmek için geliştirilmiş bir Python aracıdır.  
+Bu sürüm, aşağıdaki temel silme algoritmalarını içerir:
+
+- `zero` – sıfırlarla üzerine yazma  
+- `random` – rastgele veri yazma  
+- `dod3` – DoD 5220.22-M 3 geçiş (0x00, 0xFF, rastgele)  
+- `dod7` – DoD 5220.22-M 7 geçiş (ECE standardı)
+
+**Ancak bu, yalnızca bir “demo”dur.**  
+Gerçek askeri standartlara (NIST SP 800-88, NATO sınıflandırması, donanım seviyesi doğrulama, ATA Secure Erase, uzaktan imha yönetimi) tam uyumlu **kurumsal sürüm**, henüz kamuya açıklanmamıştır. Bu projeyi yayınlamamızın amacı, yeteneklerimizi sergilemek ve ticari lisans için potansiyel müşterilere ulaşmaktır.
 
 ---
 
-## 📥 Kurulum
+## 🖼️ Güvenlik & Şeffaflık
+
+Kodumuz **VirusTotal** tarafından taranmış ve **tamamen temiz** raporlanmıştır.  
+Aşağıdaki butondan detaylı analizi inceleyebilirsiniz:
+
+<p align="center">
+  <a href="https://www.virustotal.com/gui/file-analysis/ZWQyODkzZjliZjFjZmE3NTk3N2IwZGQ1OTAzYTEyYzY6MTc3NDU0OTM2MA==">
+    <img src="https://img.shields.io/badge/🔍%20VirusTotal%20Analizini%20Görüntüle-00A98F?style=for-the-badge&logo=virustotal&logoColor=white" />
+  </a>
+</p>
+
+> *Not: Yukarıdaki badge, yazılımın herhangi bir zararlı içermediğini kanıtlar. Bu açık kaynak demo, güvenlik konusunda en yüksek şeffaflıkla sunulmuştur.*
+
+---
+
+## 🧪 Neden Bu Proje Açık Kaynak?
+
+- **Güven İnşa Etmek:** Müşterilerimiz, kodun içini görebilir, inceleyebilir ve kendi güvenlik testlerini yapabilir.
+- **Topluluk Katkısı:** Hata bildirimleri ve algoritma geliştirmeleriyle ürünü birlikte büyütmek.
+- **Ticari Ürünün Vitrini:** Gerçek askeri sınıf ürünümüzün yeteneklerini göstermek.
+
+> **Önemli:** Bu community sürümü, aşağıdaki özellikleri **içermez**. Bunlar yalnızca kurumsal lisans ile sunulmaktadır.
+
+| Özellik | Community Edition | Enterprise Edition |
+|---------|-------------------|--------------------|
+| DoD 5220.22-M (3/7 pass) | ✅ | ✅ |
+| NIST SP 800-88 uyumluluk | ❌ | ✅ |
+| NATO sınıflandırma entegrasyonu | ❌ | ✅ |
+| ATA Secure Erase (SSD) | ❌ | ✅ |
+| Donanım seviyesi doğrulama | ❌ | ✅ |
+| Uzaktan yönetim konsolu | ❌ | ✅ |
+| Kaynak kod erişimi (full) | ✅ (GPL) | ✅ (Özel) |
+| 7/24 destek ve SLA | ❌ | ✅ |
+| Sertifikasyon raporları | ❌ | ✅ |
+| **Fiyat** | **Ücretsiz** | **Teklif bazlı** |
+
+---
+
+## 💼 Ticari Sürüm & Fiyatlandırma
+
+Kurumsal lisans ile **Secure Data Eraser – Enterprise**’u satın alabilir, askeri standartlara tam uyumlu, donanım seviyesinde imha garantili çözümümüzü işletmenize entegre edebilirsiniz.
+
+**Teklif almak ve detaylı bilgi için aşağıdaki butona tıklayın:**
+
+<p align="center">
+  <a href="https://caruppsecurity.com/fiyat.html">
+    <img src="https://img.shields.io/badge/🎯%20Ticari%20Sürüm%20Teklifi%20Al-%20Hemen%20İncele-0a66c2?style=for-the-badge&logo=internetexplorer&logoColor=white" />
+  </a>
+</p>
+
+*(Buton, sizi güncel fiyat listesi ve iletişim formuna yönlendirecektir.)*
+
+---
+
+## 📥 Kurulum & Kullanım
 
 ### 1. Depoyu klonlayın
-
-python3 -m venv venv
-source venv/bin/activate   # Linux/macOS
-# veya
-venv\Scripts\activate      # Windows (WSL)
-
-Çalıştırın
-Herhangi bir ek paket kurulumu gerekmez – sadece standart Python kütüphaneleri kullanılır.
-
-Dosya Silme
-python secure_eraser.py --file gizli_belge.pdf --method dod3
-Blok aygıt silme (örn. USB bellek – dikkat!)
-
-Komut Satırı Seçenekleri
-usage: secure_eraser.py [-h] (--file FILE | --device DEVICE)
-                        [--method {zero,random,dod3,dod7}] [--verify] [--version]
-
-Secure Data Eraser - Güvenli veri imha aracı (Community Edition)
-
-options:
-  -h, --help            show this help message and exit
-  --file FILE, -f FILE  Silinecek dosya yolu
-  --device DEVICE, -d DEVICE
-                        Silinecek blok aygıt yolu (örn. /dev/sdb)
-  --method {zero,random,dod3,dod7}, -m {zero,random,dod3,dod7}
-                        Silme yöntemi (varsayılan: dod3)
-  --verify, -v          Her geçişten sonra yazılan veriyi doğrula (daha yavaş)
-  --version             show program's version number and exit
-sudo python secure_eraser.py --device /dev/sdc --method zero
-
+```bash
 git clone https://github.com/senbascans-cloud/Data-Eraser.git
-cd Data-eraser
-
-  SSD'lerde güvenilirlik
-Flash tabanlı aygıtlar (SSD, USB bellek) üzerine yazma yöntemleri, denetleyicinin aşınma dengelemesi (wear leveling) nedeniyle her zaman başarılı olmayabilir. SSD'ler için ATA Secure Erase veya üretici araçları kullanılması önerilir.
-
-Root yetkisi
-Blok aygıt (/dev/sdX) silmek için sudo gereklidir. Program sizi uyaracaktır.
-
-Geri dönüş yok
-Silinen veriler kesinlikle kurtarılamaz. İşlemden önce mutlaka yedek alın.
-
-Lisans
-Bu yazılım GPL v3 ile lisanslanmıştır. Detaylar için LICENSE dosyasına bakın.
-
-Copyright (C) 2026 Carupp Security
-
-Bu program özgür yazılımdır: GNU Genel Kamu Lisansı sürüm 3 koşulları altında
-dağıtabilir ve/veya değiştirebilirsiniz.
+cd Data-Eraser
