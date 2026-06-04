@@ -74,7 +74,7 @@ Kurumsal lisans ile **Secure Data Eraser – Enterprise**’u satın alabilir, a
 **Teklif almak ve detaylı bilgi için aşağıdaki butona tıklayın:**
 
 <p align="center">
-  <a href="https://caruppsecurity.com/fiyat.html">
+  <a href="[https://senbasyazilim.com.tr](https://senbasyazilim.com.tr/iletisim.php)">
     <img src="https://img.shields.io/badge/🎯%20Ticari%20Sürüm%20Teklifi%20Al-%20Hemen%20İncele-0a66c2?style=for-the-badge&logo=internetexplorer&logoColor=white" />
   </a>
 </p>
