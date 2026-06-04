@@ -5,10 +5,10 @@
 # -*- coding: utf-8 -*-
 
 # SPDX-License-Identifier: GPL-3.0-only
-# SPDX-FileCopyrightText: 2026 Carupp Security
+# SPDX-FileCopyrightText: 2026 Şenbaş Yazılım
 #
 # Secure Data Eraser - Community Edition
-# Copyright (C) 2026 Carupp Security
+# Copyright (C) 2026 Şenbaş Yazılım
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
